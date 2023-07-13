@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script src="inline.js"></script>
+    <style>
+        :root {
+            --fonts: "Cascadia Code", "Consolas", "Source Code Pro", monospace;
+        }
+        ::selection {
+            background-color: white;
+            color: black;
+        }
+        
+        * {
+            cursor: default;
+        }
+
+        ::placeholder {
+            color: #ffffff;
+        }
+
+        @keyframes universe_glow {
+            0% {
+                backdrop-filter: brightness(0%);
+                background-position: top;
+            }
+
+            100% {
+                backdrop-filter: brightness(50%);
+                background-position: center;
+            }
+        }
+
+        body {
+            font-family: var(--fonts);
+            margin: 0px;
+            background-image: url("universe.jpg");
+            backdrop-filter: brightness(50%);
+            color: white;
+            animation-name: universe_glow;
+            animation-duration: 2s;
+            height: 100vh;
+            animation-fill-mode: forwards;
+        }
+
+        div.center {
+            text-align: center;
+        }
+
+        input#search-input {
+            font-family: var(--fonts);
+            background-color: transparent;
+            border-width: 0px;
+            font-size: calc((5vw + 5vh) / 2);
+            margin-top: calc(50vh - ((5vw + 5vh) / 2));
+            color: white;
+            padding: 0px;
+            width: 75vw;
+        }
+
+        input#search-input:focus {
+            outline: none;
+        }
+
+        button {
+            height: 60px;
+            width: 60px;
+            border-radius: 25px;
+            text-align: center;
+            border-width: 2px;
+            border-color: rgba(255, 255, 255, 0.454);
+            border-style: solid;
+            background-color: #ffffff;
+            margin-right: 0px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all ease-in-out 0.125s;
+        }
+
+        button:hover {
+            filter: brightness(120%);
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+            transform: scale(1.2);
+        }
+
+        button img {
+            height: 20px;
+            margin-top: 2.5px;
+        }
+
+        div#links {
+            width: 75vw;
+            font-size: 18pt;
+            font-family: var(--fonts);
+        }
+
+        span#clock {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-family: var(--fonts);
+            font-size: 18pt;
+        }
+
+        span#clock::selection {
+            background-color: transparent;
+            color: white;
+        }
+    </style>
+</head>
+
+<body oncontextmenu="return false;">
+    <span id="clock"></span>
+    <div class="center">
+        
+            <input type="text" placeholder="Find the answer" name="q" id="search-input" onload="this.foucus()"
+                autocomplete="off">
+        
+        <br><br>
+        <div align="center">
+            <div id="links" align="left">
+                <a href="https://chat.openai.com"><button class="chatgpt"><img src="chatgpt.png" alt="ChatGPT"
+                            title="ChatGPT (chat.openai.com)"></button></a>
+                <a href="https://open.spotify.com"><button class="spotify"><img src="spotify.png" alt="Spotify"
+                            title="Spotify (open.spotify.com)"></button></a>
+                <a href="https://de.wikipedia.com"><button class="wikipedia"><img src="wikipedia.png" alt="Wikipedia"
+                            title="Wikipedia (de.wikipedia.com)"></button></a> <a href="https://127.0.0.1:5000"><button
+                        class="lumos"><img src="lumos.png" alt="Lumos" title="Lumos (localhost:5000)"></button></a>
+                <a href="https://youtube.com"><button class="youtube"><img src="youtube.png" alt="YouTube"
+                            title="YouTube (youtube.com)"></button></a>
+                <a href="https://github.com"><button class="github"><img src="github.png" alt="GitHub"
+                            title="GitHub (github.com)"></button></a>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
